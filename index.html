@@ -194,7 +194,7 @@ function download(nome, conteudo, tipo) {
 $('#csv').onclick = () => {
   const out = filtrar();
   const cols = ['nome','oab','uf','estado','anos','reg','sit','cidade','tel','zap','ig','igurl','site','src'];
-  const cab = ['nome','numero_oab','estado','uf','anos_de_advocacia','data_registro','situacao',
+  const cab = ['nome','numero_oab','uf','estado','anos_de_advocacia','data_registro','situacao',
                'cidade','telefone','whatsapp','instagram','instagram_url','website','url_diretorio'];
   const escCsv = v => `"${String(v ?? '').replace(/"/g,'""')}"`;
   const linhas = [cab.join(';')].concat(out.map(d => cols.map(c => escCsv(d[c])).join(';')));
@@ -204,7 +204,7 @@ $('#csv').onclick = () => {
 $('#xlsx').onclick = () => {
   const out = filtrar();
   const cols = ['nome','oab','uf','estado','anos','reg','sit','cidade','tel','zap','ig','igurl','site','src'];
-  const cab = ['nome','numero_oab','estado','uf','anos_de_advocacia','data_registro','situacao',
+  const cab = ['nome','numero_oab','uf','estado','anos_de_advocacia','data_registro','situacao',
                'cidade','telefone','whatsapp','instagram','instagram_url','website','url_diretorio'];
   const rows = out.map(d => cols.map(c => d[c] ?? ''));
   const xml = '<?xml version="1.0"?><Workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:ss="http://schemas.openxmlformats.org/spreadsheetml/2006/main">' +
